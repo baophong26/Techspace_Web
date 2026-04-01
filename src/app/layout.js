@@ -1,6 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import "aos/dist/aos.css";
+import "../assets/css/style.css";
+import "../assets/css/responsive.css";
+import "../assets/css/animations.css";
+import ClientProviders from "./ClientProviders";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -22,7 +26,14 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <head>
+        {/* Exact same libraries as the old React Vite project */}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+      </head>
+      <body id="root" className="min-h-full flex flex-col">
+        <ClientProviders>{children}</ClientProviders>
+      </body>
     </html>
   );
 }

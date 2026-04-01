@@ -1,0 +1,415 @@
+/* ==============================================
+   2026 FASHION TECH GLOBAL STYLES (THE TRUE UPGRADE)
+   ============================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+/* Base Override */
+body, h1, h2, h3, h4, h5, h6, p, a, div, span, button {
+  font-family: 'Outfit', sans-serif !important;
+}
+
+body {
+  background-color: #fafafa !important; /* Extremely light off-white tech vibe */
+  color: #111;
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism Header */
+.header {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.03) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.3s ease;
+}
+
+/* Logo Setup */
+.logo_container a {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -1.5px !important;
+  font-size: 28px !important;
+  background: linear-gradient(90deg, #111 0%, #333 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.logo_container a span {
+  -webkit-text-fill-color: inherit !important;
+  color: inherit !important;
+}
+
+/* Navigation Menu */
+.navbar_menu li a {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  color: #111 !important;
+  position: relative;
+}
+.navbar_menu li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 8px;
+  left: 20px;
+  background-color: #111 !important;
+  transition: width 0.3s cubic-bezier(0.2, 1, 0.2, 1);
+}
+.navbar_menu li a:hover::after {
+  width: calc(100% - 40px);
+}
+
+/* Banner Styling */
+.main_slider_content h6 {
+  font-family: 'Space Grotesk', sans-serif !important;
+  color: #fff !important;
+  background: #111 !important;
+  padding: 8px 16px !important;
+  border-radius: 30px !important;
+  letter-spacing: 2px !important;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+.main_slider_content h1 {
+  font-weight: 800 !important;
+  font-size: 68px !important;
+  line-height: 1.1 !important;
+  letter-spacing: -2px !important;
+  color: #111 !important;
+  text-transform: uppercase !important;
+}
+
+/* PRODUCT CARDS (Fixing overlapping elements) */
+.product-item {
+  border: none !important;
+  background: transparent !important;
+  border-radius: 0px !important;
+  height: auto !important;
+  min-height: 420px !important;
+  padding-bottom: 20px !important;
+  transform: translateY(0) !important;
+  transition: transform 0.6s cubic-bezier(0.2, 1, 0.2, 1) !important;
+  position: relative;
+  z-index: 1;
+}
+
+.product-item:hover {
+  transform: translateY(-8px) !important;
+  z-index: 10;
+}
+
+/* Internal Card Structure */
+.product {
+  background: transparent !important;
+  height: auto !important;
+}
+
+.product_image {
+  background: #ffffff !important; /* Clean white for e-commerce */
+  border-radius: 12px 12px 0 0 !important;
+  overflow: hidden;
+  position: relative;
+  height: 250px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 15px !important;
+}
+
+.product_image img {
+  mix-blend-mode: multiply !important;
+  transition: transform 0.8s cubic-bezier(0.2, 1, 0.2, 1) !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block;
+}
+
+.product-item:hover .product_image img {
+  transform: scale(1.06) !important;
+}
+
+.product_info {
+  background: transparent !important;
+  text-align: center !important;
+  align-items: center !important;
+  padding: 20px 10px 10px 10px !important;
+}
+
+.product_name div {
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  color: #111 !important;
+  margin-bottom: 4px !important;
+}
+
+.product_description {
+  font-size: 14px !important;
+  color: #888 !important;
+  line-height: 1.5 !important;
+  text-align: left !important;
+  padding: 0 !important;
+  height: auto !important;
+  margin-bottom: 8px !important;
+  max-width: 90%;
+}
+
+.product_price {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  color: #111 !important;
+  margin-top: auto !important;
+}
+
+/* The MAGIC Add to Cart Button (Glassmorphism Pill, floating OVER image) */
+.product-item .red_button.add_to_cart_button {
+  background: rgba(17, 17, 17, 0.8) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-radius: 40px !important;
+  width: calc(100% - 40px) !important;
+  left: 20px !important;
+  top: 50% !important; /* Position it centered vertically relative to image */
+  transform: translateY(20px) !important;
+  position: absolute !important;
+  height: 48px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+  z-index: 100 !important;
+}
+
+.product-item:hover .red_button.add_to_cart_button {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(-50%) !important; /* Slides up smoothly into center */
+}
+
+.red_button.add_to_cart_button div {
+  color: #fff !important;
+  font-weight: 600 !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+  letter-spacing: 1px !important;
+  font-size: 14px !important;
+  pointer-events: none; /* So the button itself takes clicks */
+}
+
+.red_button.add_to_cart_button:hover {
+  background: #111 !important;
+  transform: translateY(-50%) scale(1.05) !important;
+}
+
+/* Fixing the Red Button Globally (Banners, etc) */
+.red_button {
+  background: #111 !important;
+  border-radius: 40px !important;
+}
+.red_button a, .red_button div {
+  color: #fff !important;
+}
+
+/* Category Banners - Pill Filter Tags */
+.banner_item {
+  border: none !important;
+}
+.banner_category a {
+  background: #fff !important;
+  color: #111 !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  border-radius: 40px !important;
+  padding: 15px 35px !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06) !important;
+  transition: all 0.4s ease !important;
+}
+.banner_category a:hover {
+  background: #111 !important;
+  color: #fff !important;
+  transform: scale(1.05) !important;
+}
+
+/* Section Titles (Hàng Mới Về) */
+.section_title h2 {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 32px !important;
+  color: #ffffff !important;
+  border-bottom: none !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+}
+.section_title h2::after { display: none !important; }
+
+/* Filter lines */
+.new_arrivals_sorting li {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 600 !important;
+  background: #2a2a2a !important;
+  color: #aaaaaa !important;
+  border-radius: 6px !important;
+  margin: 0 5px !important;
+  border: 1px solid #333 !important;
+  transition: all 0.3s ease !important;
+}
+.new_arrivals_sorting li:hover { 
+  background: #00D2FF !important; 
+  color: #111 !important; 
+  border-color: #00D2FF !important;
+}
+.new_arrivals_sorting li.active { 
+  background: #00D2FF !important; 
+  color: #111 !important; 
+  border-color: #00D2FF !important;
+}
+
+
+  /* --- PREMIUM BLACK & GOLD OVERRIDES --- */
+  .main_slider_content h1, .main_slider_content h6 { color: #00FFFF !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
+  .benefit, .deal_ofthe_week { background-color: #1a1a1a !important; }
+  .newsletter { background-color: #121212 !important; border-top: 1px solid #00D2FF; }
+  .footer { background-color: #0d0d0d !important; }
+  .card { background-color: #1a1a1a !important; border-color: #333 !important; }
+  .product_name div { color: #e0e0e0 !important; }
+  .product_price { color: #00D2FF !important; }
+  input, select, textarea { background-color: #222 !important; color: #00FFFF !important; border-color: #444 !important; }
+  .top_nav, .header { background: #0a0a0a !important; border-bottom: 1px solid #333 !important; }
+  .top_nav_left { color: #00D2FF !important; }
+
+  /* --- NEW UI/UX ANIMATIONS --- */
+  @keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .logo_metallic_gold_animated {
+    background: linear-gradient(90deg, #FFD700, #ff8c00, #FFEA00, #ff0055, #FFD700);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFlow 4s ease infinite;
+    filter: drop-shadow(0px 0px 8px rgba(255, 215, 0, 0.4));
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .nav_link_animated {
+    position: relative;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    transition: color 0.3s ease;
+  }
+  .nav_link_animated::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(90deg, #00D2FF, #FF0055);
+    transition: width 0.3s ease;
+  }
+  .nav_link_animated:hover {
+    color: #00D2FF !important;
+  }
+  .nav_link_animated:hover::after {
+    width: 100%;
+  }
+
+  /* Single Product Hover */
+  .product-item-animated {
+    background: rgba(30, 30, 30, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    position: relative;
+    padding-bottom: 25px !important;
+  }
+  .product-item-animated:hover {
+    transform: translateY(-12px) scale(1.02) !important;
+    box-shadow: 0 15px 35px rgba(255, 59, 59, 0.2), 0 0 15px rgba(0, 210, 255, 0.1) !important;
+    border: 1px solid rgba(255, 59, 59, 0.3) !important;
+    z-index: 10;
+  }
+  
+  .product-img-animated {
+    transition: transform 0.6s ease !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+  .product-item-animated:hover .product-img-animated {
+    transform: scale(1.08) !important;
+  }
+
+  .add-to-cart-animated {
+    background: linear-gradient(135deg, #FF4D4F, #FF0055) !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(255, 77, 79, 0.4) !important;
+    border-radius: 30px !important;
+  }
+  .add-to-cart-animated:hover {
+    box-shadow: 0 8px 25px rgba(255, 77, 79, 0.7) !important;
+    background: linear-gradient(135deg, #FF0055, #FF4D4F) !important;
+  }
+
+/* --- OVERRIDING PREVIOUS RED_BUTTON A TAG CSS CONFLICTS ON SINGLE PRODUCT --- */
+#root .red_button.product-add_to_cart_button {
+  background: var(--accent-magenta, #ff0055) !important; 
+  border-radius: 30px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(255, 0, 85, 0.4) !important;
+  transition: all 0.3s ease !important;
+  padding: 0 35px !important;
+  height: 48px !important;
+  width: auto !important;
+  min-width: max-content !important;
+  white-space: nowrap !important;
+}
+
+#root .red_button.product-add_to_cart_button:hover {
+  background: var(--accent-cyan, #00f3ff) !important;
+  box-shadow: 0 8px 25px rgba(0, 243, 255, 0.6) !important;
+  transform: translateY(-2px) !important;
+}
+
+#root .red_button.product-add_to_cart_button a,
+#root .red_button.product-add_to_cart_button a:hover,
+#root .red_button.product-add_to_cart_button a:active {
+  background: transparent !important;
+  box-shadow: none !important; 
+  transform: none !important;  
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+}
+
+#root .red_button.product-add_to_cart_button:hover a {
+  color: #111 !important; /* Switch to dark text when glowing cyan */
+}

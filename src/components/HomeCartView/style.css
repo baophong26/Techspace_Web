@@ -1,0 +1,171 @@
+/*
+ ** Cyberpunk Cart View Styling
+ */
+
+.fade.right.modal .modal-dialog {
+  position: fixed;
+  margin: auto;
+  width: 400px;
+  height: 100%;
+  right: 0;
+  -webkit-transform: translate3d(0%, 0, 0);
+  transform: translate3d(0%, 0, 0);
+}
+
+.fade.right.modal .modal-content {
+  height: 100%;
+  overflow-y: auto;
+  background: rgba(15, 15, 15, 0.95);
+  backdrop-filter: blur(15px);
+  border-left: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 0;
+  box-shadow: -10px 0 30px rgba(0, 255, 255, 0.1);
+  color: #e0e0e0;
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+  padding: 20px 30px;
+  position: relative;
+}
+
+.modal-title {
+  color: #00FFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.checkout--btn {
+  background: linear-gradient(135deg, #FF0055, #D10046);
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+  position: absolute;
+  right: 50px;
+  top: 20px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 0, 85, 0.3);
+}
+
+.checkout--btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(255, 0, 85, 0.6);
+  color: #fff;
+}
+
+.fade.right.modal .modal-body {
+  padding: 30px;
+}
+
+/*Right*/
+.fade.right.modal {
+  right: -400px;
+  transition: opacity 0.3s linear, right 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.fade.right.modal.show {
+  right: 0;
+}
+
+/* Cart Items */
+.basket--item {
+  display: flex;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.basket--item--img {
+  width: 90px;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-right: 20px;
+}
+.basket--item--img img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.basket--item--details {
+  flex: 1;
+}
+
+.basket--item--title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.basket--item--quantity,
+.basket--item--price {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+.basket--item--price span {
+  color: #00FFFF;
+  font-weight: 700;
+}
+
+/* Empty State */
+.empty--basket {
+  text-align: center;
+  padding-top: 50px;
+}
+.empty--basket h4 {
+  color: #00FFFF;
+  font-size: 16px;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+.empty--basket img {
+  max-width: 180px;
+  opacity: 0.7;
+  filter: drop-shadow(0 0 20px rgba(0,255,255,0.3));
+}
+
+/* Total Price */
+.total--price-container {
+  margin-top: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 255, 255, 0.1);
+}
+.total--price-container h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.cart-checkout-btn-big {
+  background: linear-gradient(135deg, #00C6FF, #0072FF);
+  color: #fff;
+  border: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+  transition: all 0.3s ease;
+}
+.cart-checkout-btn-big:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 210, 255, 0.6);
+  color: #fff;
+}
